@@ -6,7 +6,11 @@
 <body>
 <?php
 	require 'auth.php';
-	§token = $_COOKIE["jwt"];
+	
+	if(isset($_COOKIE["jwt"])){
+		§token = $_COOKIE["jwt"];
+	}
+	
 	if(!validateJWT($token))
 	{
 		header("Location:login.php");

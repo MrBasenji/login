@@ -5,7 +5,8 @@
 <body>
 
 <?php
-        session_start();
+		require 'auth.php';
+		
         try {
         $pdo = new PDO('mysql:host=localhost;dbname=login_db', 'root', '');
         }
@@ -24,7 +25,7 @@
 
                 //check password
                 if ($user !== false && password_verify($password, $user['password'])) {
-                        $_SESSION['userid'] = $user['id'];
+                        createJWT($user);
                         die('Login erfolgreich. Weiter zu <a href="content.php">internen Bereich</a>');
                 } else {
                         $errorMessage = "E-Mail oder Passwort war ungültig<br>";

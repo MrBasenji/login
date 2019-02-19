@@ -9,13 +9,16 @@
 	
 	if(isset($_COOKIE["jwt"])){
 		§token = $_COOKIE["jwt"];
+		
+		if(!validateJWT($token))
+		{
+			header("Location:login.php");
+		}
 	}
-	
-	if(!validateJWT($token))
+	else
 	{
 		header("Location:login.php");
 	}
-	
 ?>
 
 	<a href="register.php">zurück zur Registrierung</a>

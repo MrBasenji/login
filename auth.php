@@ -1,4 +1,5 @@
 <?php
+	require_once 'vendor/autoload.php';
 	use ReallySimpleJWT\Token;
 	
 	$secret = getenv('PHP_SECRET');

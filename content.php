@@ -7,7 +7,7 @@ if
 <br>
 <a href="login.php">Zum Log-in</a>
 <br>
-<a href="https://github.com/MrBasenji/login">Github Repository</a>
+<a href="https://github.com/MrBasenji/login" target="_blank">Github Repository</a>
 <br>
 <p>[potential content]</p>
 </body>

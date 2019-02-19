@@ -8,7 +8,7 @@
 	require 'auth.php';
 	
 	if(isset($_COOKIE["jwt"])){
-		§token = $_COOKIE["jwt"];
+		$token = $_COOKIE["jwt"];
 		
 		if(!validateJWT($token))
 		{

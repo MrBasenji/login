@@ -7,6 +7,7 @@
 <?php
 	require 'auth.php';
 	
+	// if user is not logged in -> redirect to login
 	if(isset($_COOKIE["jwt"])){
 		$token = $_COOKIE["jwt"];
 		

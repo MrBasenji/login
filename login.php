@@ -7,6 +7,7 @@
 <?php
 		require 'auth.php';
 		
+		//try connect to Database
         try {
         $pdo = new PDO('mysql:host=localhost;dbname=login_db', 'root', '');
         }
@@ -14,7 +15,8 @@
         print "Error!: " . $e->getMessage() . "<br/>";
         die();
         }
-
+		
+		// if inputs are posted prepare and execute Database entries
         if(isset($_GET['login'])) {
                 $email = $_POST['email'];
                 $password = $_POST['password'];
@@ -32,7 +34,8 @@
                 }
 
         }
-
+		
+		//echo error message
         if(isset($errorMessage)) {
                 echo $errorMessage;
         }

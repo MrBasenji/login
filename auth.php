@@ -2,7 +2,7 @@
 	require_once 'vendor/autoload.php';
 	use ReallySimpleJWT\Token;
 	
-	
+	//create Jason Web Token
 	function createJWT($user)
 	{
 		$secret = getenv('PHP_SECRET');
@@ -14,6 +14,7 @@
 		setcookie("jwt", $token, time() + 3600);
 	}
 	
+	//validate Jason Web Token
 	function validateJWT(string $token): bool
 	{
 		$secret = getenv('PHP_SECRET');
